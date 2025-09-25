@@ -1,0 +1,17 @@
+# docker version
+version: '3.9'
+
+# set service
+services:
+  web: # name of one service
+    # build docker file
+    build: .
+    #run manage.py form docker dir
+    command: python /code/manage.py runserver 0.0.0.0:8000
+    # set . means current path equal to /code in docker
+    volumes:
+      - .:/code
+    # get permission from client ports to docker ports 
+    ports:
+      - 8000:8000
+
