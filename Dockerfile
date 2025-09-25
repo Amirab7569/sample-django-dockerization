@@ -14,6 +14,6 @@ COPY requirements.txt /code/
 # set command to install package
 RUN pip install -r requirements.txt
 
-# copy file from cureent path to docker
+# copy file from current path to docker
 COPY . /code/
 
